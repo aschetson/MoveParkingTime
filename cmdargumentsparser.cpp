@@ -24,11 +24,9 @@ CmdArgumentsParser::CmdArgumentsParser(const QStringList& args)
     m_parser.addOption(inTypeOption);
     m_parser.addHelpOption();
 
-    auto help = m_parser.addHelpOption();
-
     m_parser.process(args);
 
-    if (m_parser.isSet(help))
+    if (m_parser.isSet("?"))
     {
         m_parser.showHelp();
     }
