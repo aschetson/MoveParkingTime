@@ -13,7 +13,7 @@ CmdArgumentsParser::CmdArgumentsParser(const QStringList& args)
 {
     m_parser.setApplicationDescription("Application for parking and moving time calculation");
 
-    QCommandLineOption inOption(IN, "Read data from <source>", "source", "log.txt");
+    QCommandLineOption inOption(IN, "Read data from <source>", "source", "log.csv");
     QCommandLineOption inTypeOption(IN_TYPE, "Source type <type>", "type", "csv-file");
     QCommandLineOption outOption(OUT, "Save results into <dest>", "dest", "out.txt");
     QCommandLineOption overwriteOption{{FORCE, F}, "Overwrite existing files."};
