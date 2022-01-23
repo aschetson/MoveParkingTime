@@ -1,6 +1,8 @@
 #include "result.h"
 #include "utils.h"
 
+#include <sstream>
+
 std::ostream &operator<<(std::ostream &os, const Result &res)
 {
     os << "id: " << res.id << std::endl;

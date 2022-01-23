@@ -22,7 +22,7 @@ class CmdArgumentsParser
     static const QString F;
 
 public:
-    CmdArgumentsParser(const QStringList& args);
+    explicit CmdArgumentsParser(const QStringList& args);
 
     std::unique_ptr<IDataReader> createReader();
     std::unique_ptr<IResultWriter> createWriter();

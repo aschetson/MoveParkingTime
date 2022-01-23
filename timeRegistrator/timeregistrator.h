@@ -2,6 +2,7 @@
 #define TIMEREGISTRATOR_H
 
 #include <memory>
+#include <stdexcept>
 
 #include <QTime>
 
@@ -9,7 +10,6 @@
 
 class DataOrderError : public std::runtime_error
 {
-    std::string m_msg;
 public:
     DataOrderError(const QTime& min, const QTime& passed);
 };
@@ -73,14 +73,11 @@ public:
      */
     void addTimeMoved(const QTime& time);
 
-    /// The last accepted time value
-    QTime last() const;
-
     /**
      * @brief Collecting all data per day
      */
     void flush();
-    void setTimeMoved(const QTime &timeMoved);
+
     QTime timeParked() const;
     QTime timeMoved() const;
 };

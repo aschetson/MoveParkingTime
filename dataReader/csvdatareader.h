@@ -25,7 +25,7 @@ public:
      * @param fileName CSV file name
      * @throw std::runtime_error if file was not open
      */
-    CsvDataReader(const QString &fileName);
+    explicit CsvDataReader(const QString &fileName);
 
     /**
      * @copydoc IDataReader::readNext

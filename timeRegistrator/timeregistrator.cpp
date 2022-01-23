@@ -4,11 +4,6 @@
 #include "parkingstate.h"
 #include "utils.h"
 
-QTime TimeRegistrator::last() const
-{
-    return m_lastTime;
-}
-
 void TimeRegistrator::flush()
 {
     checkParking(DAY_END);
@@ -24,11 +19,6 @@ QTime TimeRegistrator::timeParked() const
 QTime TimeRegistrator::timeMoved() const
 {
     return m_timeMoved;
-}
-
-void TimeRegistrator::setTimeMoved(const QTime &timeMoved)
-{
-    m_timeMoved = timeMoved;
 }
 
 std::unique_ptr<State> TimeRegistrator::initialState(bool moving)

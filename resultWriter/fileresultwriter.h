@@ -9,7 +9,7 @@ class FileResultWriter : public IResultWriter
 {
     QFile m_file;
 public:
-    FileResultWriter(const QString &fileName);
+    explicit FileResultWriter(const QString &fileName);
     void write(const Result &result) override;
     ~FileResultWriter();
 };
