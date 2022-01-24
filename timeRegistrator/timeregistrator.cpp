@@ -37,7 +37,7 @@ void TimeRegistrator::checkParking(const QTime& currentTime)
 {
     auto delta = currentTime - m_lastTime;
 
-    if (delta > PARKING_TIME_MIN_VAL)
+    if (delta >= PARKING_TIME_MIN_VAL)
     {
         addTimeParked(delta);
         m_state->flush(m_lastTime);
