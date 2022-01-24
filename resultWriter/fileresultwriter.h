@@ -8,6 +8,7 @@
 class FileResultWriter : public IResultWriter
 {
     QFile m_file;
+    bool m_writeLastSeparator = false;
 public:
     explicit FileResultWriter(const QString &fileName);
     void write(const Result &result) override;

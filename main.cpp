@@ -12,7 +12,9 @@ int main(int argc, char *argv[])
     try
     {
         CmdArgumentsParser parser{app.arguments()};
-        Solution solution{parser.createReader(), parser.createWriter()};
+        auto reader = parser.createReader();
+        auto writer = parser.createWriter();
+        Solution solution{std::move(reader), std::move(writer)};
         solution.process();
     }
     catch (std::runtime_error& e)

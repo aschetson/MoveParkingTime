@@ -25,9 +25,14 @@ void FileResultWriter::write(const Result &result)
     {
         throw std::runtime_error(m_file.errorString().toStdString());
     }
+
+    m_writeLastSeparator = true;
 }
 
 FileResultWriter::~FileResultWriter()
 {
-    m_file.write("-----");
+    if (m_writeLastSeparator)
+    {
+        m_file.write("-----");
+    }
 }
